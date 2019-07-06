@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Info</title>
+
+<script type="text/javascript">
+
+  //Find the values added in form using the id of each fields. The ".val()" function finds the value added in the form fields.
+  var fullname = $('.fullname').val();
+  var address = $('.address').val();
+  var mobileno = $('.mobileno').val();
+  var email = $('.email').val();
+  var indexat = email.indexOf("@"); //Index of "@" in the email field
+  var indexdot = email.indexOf("."); //Index of "." in the email field
+  var password = $('.password').val();
+  var repassword = $('.repassword').val();
+  
+  //Function will execute when the button "Click to Submit" is clicked.
+  $('#btnvalidate').click(function() {
+	  
+    //Blank field validation of fullname, mobile no and address. The function will generate an alert message if "fullname" or "mobile no" or "address" field is blank  
+    if(fullname == '')
+    {
+	  alert('Please enter your Full Name');
+	  $('#fullname').focus(); //The focus function will move the cursor to "fullname" field
+    }
+    else if(address == '')
+    {
+	  alert('Please enter your Address');
+	  $('.address').focus();
+    }
+    else if(mobileno == '')
+    {
+	  alert('Please enter your Mobile Number');
+	  $('.address').focus();
+    }
+    
+    //Validation of valid email address. The function will generate an alert message if "email" field is blank or incorrect
+    else if(indexat < 1 || (indexdot-indexat) < 2)
+    {
+	  alert('Please enter a valid Email Id');
+	  $('.email').focus();
+    }
+    
+    //Validation of password. The function will generate an alert message if "password" field is not same as "retype password".
+    else if(password == '' && password != repassword)
+    {
+	  alert('Password and Retype password donot match');
+	  $('.repassword').focus();
+    }
+	
+
+  });
+  
+</script>
+
+
+
+
+</head>
+<body>
+<div class="container">
+<div class="h">
+ <center><h2>PERSONAL INFORMATION<h2></center>
+ </div>
+ <hr>
+ <div class="shadow-lg p-3 mb-5 bg-white rounded sh">
+ <div class="row c1">
+ <div class="col-lg-12">
+      <h4>Fields marked with <span class="required">*</span> are mandatory. However, to have enough content in your resume, please fill in all fields.</h4>
+	  <hr>
+	  <form>
+	  <center><h3><i>CONTACT DETAILS</i></h3></center>
+	  <hr>
+	  <div class="form-row">
+     <div class="form-group col-md-6">
+	 <label for="firstname">First Name<span class="required">*</span></label>
+      <input type="text" class="form-control" placeholder="First name">
+    </div>
+     <div class="form-group col-md-6">
+	 <label for="lastname">Last Name<span class="required">*</span></label>
+      <input type="text" class="form-control" placeholder="Last name">
+    </div>
+  </div>
+	  
+	  
+  <div class="form-row">
+  
+	<div class="form-group col-md-12">
+      <label for="inputEmail4">Email<span class="required">*</span></label>
+      <input type="email" class="form-control" id="email" placeholder="Email">
+    </div>
+	 
+  </div>
+  
+  <div class="form-row">
+  
+	<div class="form-group col-md-6">
+      <label for="mobile1">Mobile<span class="required">*</span></label>
+      <input type="mobile" class="form-control" id="mobileno" placeholder="Mobile number">
+    </div>
+	 <div class="form-group col-md-6">
+      <label for="mobile2">Alternate Mobile</label>
+      <input type="mobile" class="form-control" id="mobileno" placeholder="alternative mobile number">
+    </div>
+  </div>
+  
+   <div class="form-row">
+  
+	<div class="form-group col-md-12">
+      <label for="skypeid">Skype</label>
+      <input type="email" class="form-control" id="inputEmail5" placeholder="Skype Username">
+    </div>
+	 
+  </div>
+   <div class="form-row">
+  
+	<div class="form-group col-md-12">
+      <label for="linkedinid">LinkedIn</label>
+      <input type="email" class="form-control" id="inputEmail6" placeholder="LinkedIn Id">
+    </div>
+	 
+  </div>
+  
+  
+  <div class="form-group col-md-12">
+    <label for="inputAddress">Address<span class="required">*</span></label><br>
+
+    <textarea class="form-control" id="exampleTextarea" rows="3">Enter Your Address Here....</textarea>	
+  </div>
+
+  
+  
+  <div class="form-row">
+    
+   
+    <div class="form-group col-md-12">
+      <label for="inputZip">PIN<span class="required">*</span></label>
+      <input type="pin" class="form-control" id="pin">
+    </div>
+  </div>
+  
+  <div class="wrapper">
+  <button type="submit" class="btn btn-primary btn">Save And Continue</button>
+  </div>
+  <br>
+  <hr>
+  <center><h5><b>Facing difficulties or need clarifications? Feel free to talk to us on +91-88800-88080</b></h5></center>
+</form>
+	  
+ </div>
+ </div>
+ </div>
+ 
+ <hr>
+	  
+</div>
+
+
+
+ 
+ 
+
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
